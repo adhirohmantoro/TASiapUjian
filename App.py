@@ -162,8 +162,8 @@ def view_screening(patient_id):
     cursor.execute(''' SELECT * FROM patients WHERE id=%s AND id=%s ''', (patient_id, patient_id))
     patient = cursor.fetchone()
     # Get the patient data
-    patient_id = patient[0].split(',')
-    nama = patient[1]
+    patient_id = patient[0]
+    nama = patient[1].split('')
     nik = patient[2]
     jenis_kelamin = patient[3]
     if jenis_kelamin == 'l':
