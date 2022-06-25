@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" >
+<head>
+  <!-- metadata -->
+  <meta charset="UTF-8">
+      <!-- Bootstrap CSS -->
+      <!--link rel="stylesheet" href="{{ url_for('static',    filename='css/bootstrap.min.css') }}"-->
+      <!-- CSS -->  
+      <link rel="stylesheet" href="{{ url_for('static',    filename='css/style.css') }}">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <title>Screening IoMT COVID-19</title>
+
+</head>
+<body>
+    <div class="session" style="width: 51rem; height: 30rem; display: flex; flex-direction: column; justify-content: end; background-position: 27% 90%; background-repeat: no-repeat;">
+        <div style="    color: white;
+        font-weight: bold;
+        font-size: 2.6rem;
+        text-align: center;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;">
+            Hi username
+        </div>
+        <div style="min-height: 10rem; background-color: white; padding: 2rem; flex-shrink: 0;">
+            <p style="font-weight: bold; font-size: 1.5rem; text-align: center; margin-bottom: 2rem;">Lakukan pencarian</p>
+            <div class="row" style="margin-bottom: 1rem;">
+                <div class="col-md-12 form-group" style="display: flex;
+                justify-content: center;">
+                  <input type="text" class="form-control" name="nik" id="nik" placeholder="NIK">
+                </div>
+              </div>
+            <div class="row" style="display: flex;
+            justify-content: center;">
+                <button type="button" style="margin: 0 0 0 0.5rem; width: 9rem;" id="cari">Cari</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('#cari').click(e => {
+            window.location.href = '/cari/'+$('#nik').val()
+        })
+    </script>
+</body>
+<!-- partial -->
+ 
+</html>

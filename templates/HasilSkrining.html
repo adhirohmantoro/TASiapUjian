@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap">
+
+    <link rel="stylesheet" href="{{ url_for('static',    filename='fonts/icomoon/style.css') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static',    filename='css/owl.carousel.min.css') }}">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static',    filename='css/bootstrap.min.css') }}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{{ url_for('static',    filename='css/style2.css') }}">
+
+    <title>Form Screening IoMT COVID-19</title>
+    
+    <!-- Style Slider Form-->
+    <style>
+      .bg{
+        height: auto;
+        min-height: 100%;
+        position: relative;
+        background-image: url('/static/images/Background Login.jpg');
+        background-size: cover;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+
+      }
+    </style>
+  </head>
+ 
+  <body>
+  <!-- Define Element Form -->
+  <form id="all-data" method="post" action="screening" enctype="multipart/form-data"></form>
+
+  <div class="content">
+        <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-2 bg">
+
+        </div>
+        <div class="col-lg-9" style="padding-left: 3rem; background-color:#ffffff">
+            <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" class="form-control" value="{{nama[0]}}" readonly>
+                </div> 
+                <div class="col-md-6 form-group">
+                  <input type="text" class="form-control" value="{{nik}}" readonly>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" class="form-control" value="{{tmpt_tgl_lahir}} " readonly>
+                </div> 
+            </div>
+            <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" class="form-control" value="{{jenis_kelamin}}" readonly>
+                </div> 
+            </div>
+            <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" class="form-control" value="{{alamat}}" readonly>
+                </div> 
+            </div>
+            <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" class="form-control" value="{{no_telp}}" readonly>
+                </div> 
+            </div>
+            <div class="row">
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Hasil Pengukuran</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Detak jantung</td>
+                        <td>{{avg_heartrate}}</td>
+                      </tr>
+                      <tr>
+                        <td>Saturasi oksigen</td>
+                        <td>{{avg_spo2}}</td>
+                      </tr>
+                      <tr>
+                        <td>Laju Pernapasan</td>
+                        <td>{{avg_respiration}}</td>
+                      </tr>
+                      <tr>
+                        <td>X-ray</td>
+                        <td>{{hasil_x_ray}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div> 
+        </div>
+      </div>
+  </div>
+    
+    
+
+    <script src="{{ url_for('static',    filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('static',    filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static',    filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static',    filename='js/jquery.validate.min.js') }}"></script>
+    <script src="{{ url_for('static',    filename='js/main.js') }}"></script>
+    
+    <script>
+      //
+      let position = 0
+      $('.slider-btn').click((e) => {
+        const move = 106
+        if($(e.target).is('.next')){
+          position -= move
+        }
+        else{
+          position += move
+        }
+        $('#slider-container').css('transform', `translateX(${position}%)`)
+      })
+    </script>
+  </body>
+</html>

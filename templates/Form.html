@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap">
+
+    <link rel="stylesheet" href="{{ url_for('static',    filename='fonts/icomoon/style.css') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static',    filename='css/owl.carousel.min.css') }}">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static',    filename='css/bootstrap.min.css') }}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{{ url_for('static',    filename='css/style2.css') }}">
+
+    <title>Form Screening IoMT COVID-19</title>
+    
+    <!-- Style Slider Form-->
+    <style>
+      #slider-container{
+        transition: transform 0.3s;
+      }
+      #slider-container .form-container{
+        width: 100%;
+        flex-shrink: 0;
+        margin-right: 6%;
+      }
+      .form-container .form-check-label{
+        font-size: 0.9rem;
+      }
+      .form-container .action-btn{
+        width: 100%;
+      }
+    </style>
+  </head>
+ 
+  <body>
+  <!-- Define Element Form -->
+  <form id="all-data" method="post" action="screening" enctype="multipart/form-data"></form>
+
+  <div class="content">
+        <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10">    
+          <div class="row align-items-center" >
+            <div class="col-lg-7 mb-5 mb-lg-0" style="overflow: hidden">
+
+               <!-- div punya Form -->
+              <div style="display: flex; " id="slider-container">
+                
+                <!-- Form Screening -->
+                <div class="form-container">
+                  <h2 class="mb-5">Form Screening<br> COVID-19</h2>
+
+                  <div class="border-right pr-5 mb-5">
+                    <div class="row">
+                      <div class="col-md-6 form-group">
+                        <input type="text" class="form-control" name="name" id="name" form="all-data" placeholder="Nama Lengkap">
+                      </div>
+                      <div class="col-md-6 form-group">
+                        <input type="text" class="form-control" name="nik" id="nik" form="all-data" placeholder="NIK">
+                      </div>
+                    </div>
+    
+                    <div class="row">
+                      <div class="col-md-12 form-group">
+                        <input type="text" class="form-control" name="tmpt_lahir" id="telahir" form="all-data" placeholder="Tempat Lahir">
+                      </div>
+                    </div>
+    
+                    <div class="row">
+                      <div class="col-md-12 form-group">
+                        <input type="date" class="form-control" name="tgl_lahir" id="tlahir" form="all-data" placeholder="Tanggal Lahir">
+                      </div>
+                    </div>
+    
+                    <div class="row">
+                      <div class="col-md-12 form-group">
+                        <label for="jkelamin">Example select</label>
+                        <select class="form-control" id="jkelamin" form="all-data" placeholder="Jenis Kelamin" name="jkelamin">
+                          <option value="l">Laki-Laki</option>
+                          <option value="p">Perempuan</option>
+                        </select>
+                      </div>
+                    </div>
+    
+                    <div class="row">
+                      <div class="col-md-12 form-group">
+                        <input type="text" class="form-control" name="alamat" id="alamat" form="all-data" placeholder="Alamat">
+                      </div>
+                    </div>
+    
+                    <div class="row">
+                      <div class="col-md-12 form-group">
+                        <input type="text" class="form-control" name="telp" id="telp" form="all-data" placeholder="No. Telp">
+                      </div>
+                    </div>
+    
+                    <div class="row">
+                      <!-- <div class="col-md-6">
+                        <button type="button" class="action-btn slider-btn prev btn btn-primary rounded-0 py-2 px-4">
+                          Kembali
+                        </button>
+                      </div> -->
+                      <div class="col-md-6">
+                        <button type="button" class="action-btn slider-btn next btn btn-primary rounded-0 py-2 px-4">
+                          Selanjutnya
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Form Screening 2 -->
+                <div class="form-container">
+                  <h2 class="mb-5">Form Screening<br> COVID-19</h2>
+                  <div class="border-right pr-5 mb-5">
+                    <div class="row">
+                      <div class="col-md-6 form-group">
+                        <input type="number" class="form-control" name="bb" form="all-data" placeholder="Berat Badan (kg)">
+                      </div>
+                      <div class="col-md-6 form-group">
+                        <input type="number" class="form-control" name="tb" form="all-data" placeholder="Tinggi Badan (cm)">
+                      </div>
+                      <div class="col-md-12">
+                        <div style="font-size: 1.1rem; margin-bottom: 1rem; color: rgba(0, 0, 0, 0.5); font-weight: bold;">Gejala:</div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" name="gejala[]" form="all-data"  value="demam" id="demam">
+                          <label class="form-check-label" for="demam">
+                            Demam (> 37,5 °C)
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" name="gejala[]" form="all-data"  value="batuk-pilek" id="batuk-pilek">
+                          <label class="form-check-label" for="batuk-pilek">
+                            Batuk - pilek
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" name="gejala[]" form="all-data"  value="tenggorokan-sakit" id="tenggorokan-sakit">
+                          <label class="form-check-label" for="tenggorokan-sakit">
+                            Tenggorokan sakit
+                          </label>
+                        </div>   
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" name="gejala[]" form="all-data"  value="hidung-tersumbat" id="hidung-tersumbat">
+                          <label class="form-check-label" for="hidung-tersumbat">
+                            Hidung tersumbat
+                          </label>
+                        </div>                                              
+                      </div>              
+                    </div>
+    
+                    <div class="row">
+                      <div class="col-md-6">
+                        <button type="button" class="action-btn slider-btn prev btn btn-primary rounded-0 py-2 px-4">
+                          Kembali
+                        </button>
+                      </div>
+                      <div class="col-md-6">
+                        <button type="button" class="action-btn slider-btn next btn btn-primary rounded-0 py-2 px-4">
+                          Selanjutnya
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Form Screening 3 -->
+                <div class="form-container">
+                  <h2 class="mb-5">Form Screening<br> COVID-19</h2>
+                  <div class="border-right pr-5 mb-5">
+                    <div class="row">
+                      <div class="input-group mb-3 col-md-12">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Upload</span>
+                        </div>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="data-arduino" name="data_arduino" form="all-data">
+                          <label class="custom-file-label" for="data-arduino">File pulse oxymeter</label>
+                        </div>
+                      </div>     
+                      <div class="input-group mb-3 col-md-12">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Upload</span>
+                        </div>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="data-respiration-rate" name="data_respiration_rate" form="all-data">
+                          <label class="custom-file-label" for="data-respiration-rate">File respiration rate</label>
+                        </div>
+                      </div>   
+                      <div class="input-group mb-3 col-md-12">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Upload</span>
+                        </div>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="data_x_ray" name="data_x_ray" form="all-data">
+                          <label class="custom-file-label" for="data_x_ray">File X-ray</label>
+                        </div>
+                      </div>       
+                    </div>
+    
+                    <div class="row">
+                      <div class="col-md-6">
+                        <button type="button" class="action-btn slider-btn prev btn btn-primary rounded-0 py-2 px-4">
+                          Kembali
+                        </button>
+                      </div>
+                      <div class="col-md-6">
+                        <button type="submit" form="all-data" class="action-btn btn btn-primary rounded-0 py-2 px-4">
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+            <div class="col-lg-4 ml-auto">
+              <h3 class="mb-4">Pastikan Data Telah Diisi Dengan Benar!</h3>
+              <p>Lakukan pengisian data dengan sebenar-benarnya agar hasil lebih maksimal.</p>
+            </div>
+          </div>
+        </div>  
+        </div>
+      </div>
+  </div>
+    
+    
+
+    <script src="{{ url_for('static',    filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('static',    filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static',    filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static',    filename='js/jquery.validate.min.js') }}"></script>
+    <script src="{{ url_for('static',    filename='js/main.js') }}"></script>
+    
+    <script>
+      //
+      let position = 0
+      $('.slider-btn').click((e) => {
+        const move = 106
+        if($(e.target).is('.next')){
+          position -= move
+        }
+        else{
+          position += move
+        }
+        $('#slider-container').css('transform', `translateX(${position}%)`)
+      })
+    </script>
+  </body>
+</html>
